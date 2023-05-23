@@ -376,7 +376,7 @@ def parse_args():
     parser.add_argument("--residual_l2_reg", type=float, default=0.0, help="Regularization of outputs of residuals. Left for potential future use.")
 
     parser.add_argument("--region_kernel_size", type=int, default=8,
-                        help="Kernel size used in region-aware prompt, see PromptNet")
+                        help="Kernel size used in generating prompt embedding, see PromptNet")
     parser.add_argument(
         "--add_prompt",
         type=str,
@@ -544,7 +544,6 @@ def main():
         else:
             raise ValueError("xformers is not available. Make sure it is installed correctly")
 
-    # discriminator = EBM()
     if args.gradient_checkpointing:
         promptnet.enable_gradient_checkpointing()
 
