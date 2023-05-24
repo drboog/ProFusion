@@ -1,9 +1,9 @@
 # ProFusion
-
+<br>
 <div style="text-align: center;"> <img src="./imgs/examples.png" alt="examples" width="90%"> </div>
 <br>
 
-Code for [Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach]().
+Code for [Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach](https://arxiv.org/abs/2305.13579).
 
 ProFusion is a framework for customizing pre-trained large-scale text-to-image generation models, which is [Stable Diffusion 2](https://github.com/Stability-AI/stablediffusion) in our examples.
 <br>
@@ -56,3 +56,12 @@ If you want to train a PromptNet encoder for other domains, or on your own datas
 
 
 ## Citation
+
+    @misc{zhou2023enhancing,
+      title={Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach}, 
+      author={Yufan Zhou and Ruiyi Zhang and Tong Sun and Jinhui Xu},
+      year={2023},
+      eprint={2305.13579},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+    }
