@@ -383,8 +383,6 @@ class StableDiffusionPromptNetPipeline(DiffusionPipeline):
                 second_last_hidden_state = encoder_outputs.hidden_states[-2]
                 second_last_hidden_state = self.openclip.text_model.final_layer_norm(second_last_hidden_state)
                 second_last_hidden_state[:, insert_pos, :] = scale * second_last_hidden_state[:, insert_pos, :]
-                # we have to scale it after the normalization, otherwise it wouldn't work
-                # however, it may means that the result can be sensitive to the scale hyper-parameter
 
                 prompt_embeds_list.append(second_last_hidden_state)
             else:
@@ -415,7 +413,6 @@ class StableDiffusionPromptNetPipeline(DiffusionPipeline):
         prompt_embeds = prompt_embeds.to(dtype=self.openclip.dtype, device=device)
 
         bs_embed, seq_len, _ = prompt_embeds.shape
-        # duplicate text embeddings for each generation per prompt, using mps friendly method
         prompt_embeds = prompt_embeds.repeat(1, num_images_per_prompt, 1)
         prompt_embeds = prompt_embeds.view(bs_embed * num_images_per_prompt, seq_len, -1)
 
@@ -468,7 +465,6 @@ class StableDiffusionPromptNetPipeline(DiffusionPipeline):
 
 
         if do_classifier_free_guidance:
-            # duplicate unconditional embeddings for each generation per prompt, using mps friendly method
             seq_len = negative_prompt_embeds.shape[1]
 
             negative_prompt_embeds = negative_prompt_embeds.to(dtype=prompt_embeds.dtype, device=device)
@@ -586,7 +582,7 @@ class StableDiffusionPromptNetPipeline(DiffusionPipeline):
                           latent_model_input, negative_prompt, negative_prompt_embeds,
                           num_images_per_prompt, device, cross_attention_kwargs, scale=1.0):
         # generate epsilons for sampling
-        # Generate pseudo prompt and resiuals
+        # Generate pseudo prompt and residuals, the residuals are not used currently, just left here for potential future use
         pseudo_prompt, down_residuals, mid_residuals = self.promptnet(sample=input_img, timestep=time,
                                                                       encoder_hidden_states=input_img_clip_embed,
                                                                       promptnet_cond=promptnet_cond,
@@ -605,7 +601,6 @@ class StableDiffusionPromptNetPipeline(DiffusionPipeline):
         if mid_residuals is not None:
             mid_residuals = mid_residuals.repeat((repeat_, 1, 1, 1))
 
-        # generate embeddings, which will be the input for unet, it contains
         prompt_embeds = self._encode_prompt(
             prompt,
             ref_prompt,

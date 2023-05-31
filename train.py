@@ -815,13 +815,13 @@ def main():
                 len(placeholder_pre_prompt_ids) - 1: pseudo_prompt.shape[1] + len(placeholder_pre_prompt_ids) - 1,
                 :] = pseudo_prompt
 
-                # CLIP's text model uses causal mask, prepare it here.
-                # https://github.com/openai/CLIP/blob/cfcffb90e69f37bf2ff1e988237a0fbe41f33c04/clip/model.py#L324
+                # the causal mask is important, we explicitly write it out because we are doing something inside the model
+                # don't forget about it if you try to customize the code
+                # if you have any question, please refer to https://github.com/huggingface/transformers/blob/main/src/transformers/models/clip/modeling_clip.py
                 causal_attention_mask = text_encoder._build_causal_attention_mask(pseudo_hidden_states.shape[0],
                                                                                   pseudo_hidden_states.shape[1],
                                                                                   pseudo_hidden_states.dtype).to(
                     pseudo_hidden_states.device)
-                # # the causal mask is important, don't forget it if you try to customize the code
                 encoder_outputs = text_encoder.encoder(pseudo_hidden_states,
                                                        causal_attention_mask=causal_attention_mask,
                                                        output_hidden_states=True)

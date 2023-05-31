@@ -57,11 +57,10 @@ If you want to train a PromptNet encoder for other domains, or on your own datas
 
 ## Citation
 
-    @misc{zhou2023enhancing,
-      title={Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach}, 
-      author={Yufan Zhou and Ruiyi Zhang and Tong Sun and Jinhui Xu},
-      year={2023},
-      eprint={2305.13579},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+    @article{zhou2023enhancing,
+      title={Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach},
+      author={Zhou, Yufan and Zhang, Ruiyi and Sun, Tong and Xu, Jinhui},
+      journal={arXiv preprint arXiv:2305.13579},
+      year={2023}
     }
+
