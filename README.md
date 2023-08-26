@@ -1,8 +1,11 @@
 # ProFusion
 <br>
-<div style="text-align: center;"> <img src="./imgs/examples.png" alt="examples" width="90%"> </div>
+<div style="text-align: center;"> <img src="./imgs/ProFusion_example.jpg" alt="examples" width="90%"> </div>
 <br>
 
+I may update something later.
+
+-----------------------------
 Code for [Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach](https://arxiv.org/abs/2305.13579).
 
 ProFusion is a framework for customizing pre-trained large-scale text-to-image generation models, which is [Stable Diffusion 2](https://github.com/Stability-AI/stablediffusion) in our examples.
@@ -13,8 +16,11 @@ ProFusion is a framework for customizing pre-trained large-scale text-to-image g
 
 With ProFusion, you can generate infinite number of creative images for a novel/unique concept, with single testing image, on single GPU (~20GB are needed when fine-tune with batch size 1).
 
-<div style="text-align: center;"> <img src="./imgs/daniel.jpg" alt="framework" width="80%"> </div>
+
 <br>
+<div style="text-align: center;"> <img src="./imgs/examples.png" alt="examples" width="90%"> </div>
+<br>
+
 
 ## Example
 
@@ -24,7 +30,7 @@ With ProFusion, you can generate infinite number of creative images for a novel/
         cd ./diffusers
         pip install -e .
         cd ..
-        pip install accelerate==0.16.0 torchvision transformers>=4.25.1 datasets ftfy tensorboard Jinja2 regex tqdm joblib 
+        pip install accelerate==0.16.0 torchvision transformers==4.25.1 datasets ftfy tensorboard Jinja2 regex tqdm joblib 
 
 - Initialize [Accelerate](https://github.com/huggingface/accelerate/);
 
