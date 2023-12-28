@@ -1,17 +1,34 @@
 # ProFusion
+
+
+ProFusion (with an encoder pre-trained on a large dataset such as [CC3M](https://ai.google.com/research/ConceptualCaptions/)) can be used to efficiently construct customization dataset, which can be used to train a tuning-free customization assistant ([CAFE](https://arxiv.org/abs/2312.03045)).
+
+Given a testing image, the assistant can perform customized generation in a tuning-free manner. It can take complex user-input, generate text explanation and elaboration along with image, without any fine-tuning.
+
 <br>
-<div style="text-align: center;"> <img src="./imgs/ProFusion_example.jpg" alt="examples" width="90%"> </div>
+<div style="text-align: center;"> <img src="./imgs/main_results_cafe.jpg" alt="examples" width="90%"> </div>
+<center> Results from CAFE </center>
 <br>
 
-I may update something later.
+<br>
+<div style="text-align: center;"> <img src="./imgs/object_results_cafe.jpg" alt="examples" width="70%"> </div>
+<center> Results from CAFE </center>
+<br>
+
 
 -----------------------------
 Code for [Enhancing Detail Preservation for Customized Text-to-Image Generation: A Regularization-Free Approach](https://arxiv.org/abs/2305.13579).
 
-ProFusion is a framework for customizing pre-trained large-scale text-to-image generation models, which is [Stable Diffusion 2](https://github.com/Stability-AI/stablediffusion) in our examples.
+<br>
+<div style="text-align: center;"> <img src="./imgs/ProFusion_example.jpg" alt="examples" width="90%"> </div>
+<center> Results from ProFusion </center>
 <br>
 
+ProFusion is a framework for customizing pre-trained large-scale text-to-image generation models, which is [Stable Diffusion 2](https://github.com/Stability-AI/stablediffusion) in our examples.
+<br>
 <div style="text-align: center;"> <img src="./imgs/framework.jpg" alt="framework" width="90%"> </div>
+<center> Illustration of the proposed ProFusion </center>
+
 <br>
 
 With ProFusion, you can generate infinite number of creative images for a novel/unique concept, with single testing image, on single GPU (~20GB are needed when fine-tune with batch size 1).
@@ -19,6 +36,7 @@ With ProFusion, you can generate infinite number of creative images for a novel/
 
 <br>
 <div style="text-align: center;"> <img src="./imgs/examples.png" alt="examples" width="90%"> </div>
+<center> Results from ProFusion </center>
 <br>
 
 
