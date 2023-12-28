@@ -63,8 +63,8 @@ With ProFusion, you can generate infinite number of creative images for a novel/
 If you want to train a PromptNet encoder for other domains, or on your own dataset.
 
 - First, prepare an image-only dataset; 
-    - In our example, we use [FFHQ](https://github.com/NVlabs/ffhq-dataset). Our pre-processed FFHQ can be found at [google drive link](https://drive.google.com/file/d/1cObckM1omlMgG5x1z9sMGqbrgCKNkPhu/view?usp=share_link).
-
+    - In our experiments on human face domain, we use [FFHQ](https://github.com/NVlabs/ffhq-dataset). Our pre-processed FFHQ can be found at [google drive link](https://drive.google.com/file/d/1cObckM1omlMgG5x1z9sMGqbrgCKNkPhu/view?usp=share_link);
+    - We also trained an encoder on [CC3M](https://ai.google.com/research/ConceptualCaptions/), which leads to good customization results on arbitrary downstream domain; 
 
 - Then, run
     
