@@ -7,12 +7,12 @@ Given a testing image, the assistant can perform customized generation in a tuni
 
 <br>
 <div style="text-align: center;"> <img src="./imgs/main_results_cafe.jpg" alt="examples" width="90%"> </div>
-<center> Results from CAFE </center>
+<p style="text-align: center"> Results from CAFE </p>
 <br>
 
 <br>
 <div style="text-align: center;"> <img src="./imgs/object_results_cafe.jpg" alt="examples" width="70%"> </div>
-<center> Results from CAFE </center>
+<p style="text-align: center"> Results from CAFE </p>
 <br>
 
 
@@ -21,13 +21,13 @@ Code for [Enhancing Detail Preservation for Customized Text-to-Image Generation:
 
 <br>
 <div style="text-align: center;"> <img src="./imgs/ProFusion_example.jpg" alt="examples" width="90%"> </div>
-<center> Results from ProFusion </center>
+<p style="text-align: center"> Results from ProFusion </p>
 <br>
 
 ProFusion is a framework for customizing pre-trained large-scale text-to-image generation models, which is [Stable Diffusion 2](https://github.com/Stability-AI/stablediffusion) in our examples.
 <br>
 <div style="text-align: center;"> <img src="./imgs/framework.jpg" alt="framework" width="90%"> </div>
-<center> Illustration of the proposed ProFusion </center>
+<p style="text-align: center"> Illustration of the proposed ProFusion </p>
 
 <br>
 
@@ -36,7 +36,7 @@ With ProFusion, you can generate infinite number of creative images for a novel/
 
 <br>
 <div style="text-align: center;"> <img src="./imgs/examples.png" alt="examples" width="90%"> </div>
-<center> Results from ProFusion </center>
+<p style="text-align: center"> Results from ProFusion </p>
 <br>
 
 
