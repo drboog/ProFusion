@@ -46,7 +46,7 @@ With ProFusion, you can generate infinite number of creative images for a novel/
 - Install dependencies (we revised original [diffusers](https://github.com/huggingface/diffusers));
 
         cd ./diffusers
-        pip install -e .
+        pip install -e ".[torch]"
         cd ..
         pip install accelerate==0.16.0 torchvision transformers==4.25.1 datasets ftfy tensorboard Jinja2 regex tqdm joblib 
 
